@@ -18,7 +18,7 @@ interface HttpRequestInit {
   headers?: HttpHeaders;
   reportProgress?: boolean;
   params?: HttpParams;
-  metadata?: any;
+  metadata?: {[key: string]: any};
   responseType?: 'arraybuffer'|'blob'|'json'|'text';
   withCredentials?: boolean;
 }
@@ -137,7 +137,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
   });
@@ -145,7 +145,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
   });
@@ -153,7 +153,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
   });
@@ -162,7 +162,7 @@ export class HttpRequest<T> {
         headers?: HttpHeaders,
         reportProgress?: boolean,
         params?: HttpParams,
-        metadata?: any,
+        metadata?: {[key: string]: any},
         responseType?: 'arraybuffer'|'blob'|'json'|'text',
         withCredentials?: boolean,
       }|null,
@@ -170,7 +170,7 @@ export class HttpRequest<T> {
         headers?: HttpHeaders,
         reportProgress?: boolean,
         params?: HttpParams,
-        metadata?: any,
+        metadata?: {[key: string]: any},
         responseType?: 'arraybuffer'|'blob'|'json'|'text',
         withCredentials?: boolean,
       }) {
@@ -321,7 +321,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
     body?: T|null,
@@ -334,7 +334,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
     body?: V|null,
@@ -347,7 +347,7 @@ export class HttpRequest<T> {
     headers?: HttpHeaders,
     reportProgress?: boolean,
     params?: HttpParams,
-    metadata?: any,
+    metadata?: {[key: string]: any},
     responseType?: 'arraybuffer'|'blob'|'json'|'text',
     withCredentials?: boolean,
     body?: any|null,

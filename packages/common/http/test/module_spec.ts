@@ -75,15 +75,6 @@ export function main() {
       });
       injector.get(HttpTestingController).expectOne('/test').flush('ok!');
     });
-    it('intercepts outbound request in the order in which interceptors were bound',
-       (done: DoneFn) => {
-         injector.get(HttpClient)
-             .get('/test', {metadata: {test: true}, observe: 'response', responseType: 'text'})
-             .subscribe(value => done());
-         const req = injector.get(HttpTestingController).expectOne('/test') as TestRequest;
-         expect(req.request.headers.get('Intercepted')).toEqual('A,B');
-         req.flush('ok!');
-       });
     it('intercepts outbound responses in the order in which interceptors were bound',
        (done: DoneFn) => {
          injector.get(HttpClient)
